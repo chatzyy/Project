@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Basic Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    
+</head>
+<body>
+<!-- Menu -->
+    <div class="bg-gray-50 fixed w-full">
+        <div class="flex shadow p-2 justify-between h-20">
+            <div class="flex gap-1">
+                <h1 class="flex justify-center items-center ml-7">
+                    <img src="/img/Gemini_Generated_Image_hs4eeths4eeths4e-removebg-preview.png" alt="" class="w-20 m-0 ">
+                </h1>
+                <div>
+                    <h1 class=" text-2xl font-bold">
+                        ระบบจองห้องสมุด
+                    </h1>
+                    <h1>
+                        มหาวิทยาลัยพะเยา
+                    </h1>
+                </div>
+            </div>
+        <div class="flex justify-center h-full ">
+            <a href="#" class="flex bg-black text-white pl-6 pr-6 m-2 items-center rounded-xl"><i class="bx bx-home mr-2 text-xl"></i>ห้องทั้งหมด</a>
+            <a href="../history/history_room.html" class="flex bg- text-black pl-6 pr-6 m-2 items-center rounded-xl hover:bg-gray-200"><i class="bx bx-calendar mr-1 text-xl"></i>การจองของฉัน</a>
+        </div>
+            <div class="flex justify-center items-center m-4">
+                <a href="#" class="flex border rounded-xl  hover:bg-gray-200">
+                    <span class="flex items-center mr-3">
+                        <i class="bx bx-user m-1 text-xl p-1"></i>Jhone Jon
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- contant -->
+    <div class=" pt-40 pl-12">
+        <h1 class=" text-3xl font-bold">
+            ห้องทั้งหมด
+        </h1>
+        <h1 class="pt-2">
+            เลือกห้องที่ต้องการจองและตรวจสอบความพร้อมใช้งาน
+        </h1>
+    </div>
+    <div class="flex ml-5 pt-10 pr-10 gap-5">
+        <input id="search" type="search" placeholder="ค้นหาห้อง..." class=" bg-gray-100 rounded-xl h-9 w-full pl-4 pr-4 ml-7">
+        <select name="list_type_room" id="room_type" class="w-60 bg-gray-100 rounded-xl pl-4 pr-4">
+            <option value="all">ทุกประเภท</option>
+            <option value="ห้องเดี่ยว">ห้องเดี่ยว</option>
+            <option value="ห้องกลุ่ม">ห้องกลุ่ม</option>
+        </select>
+        <select name="list_floor" id="floor_type" class="w-60 bg-gray-100 rounded-xl pl-4">
+            <option value="all">ทุกชั้น</option>
+            <option value="ชั้น G">ชั้น G</option>
+            <option value="ชั้น 1">ชั้น 1</option>
+            <option value="ชั้น 2">ชั้น 2</option>
+            <option value="ชั้น 3">ชั้น 3</option>
+             <option value="ชั้น 4">ชั้น 4</option>
+        </select>
+    </div>
+
+<!-- room -->
+    <div id="all_room"  class="grid grid-cols-4 pr-12">
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl ">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08401
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button id="button" class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08401"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+        
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08402
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08402"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08403
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08403"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08404
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08404"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08405
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08405"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08406
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08406"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08407
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08407"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08408
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08408"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08409
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08409"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08410
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08410"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08411
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08411"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1007.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องอ่านหนังสือ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08412
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องเดี่ยว</h1>
+                <div class="flex pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะอ่านหนังสือ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08412"
+                    data-amenities="โต๊ะอ่านหนังสือ, เก้าอี้, ปลั๊กไฟ, แอร์"
+                    data-store = "1"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1008.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08413
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08413"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1008.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08414
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08414"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1008.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08415
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08415"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1008.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 4 หมายเลข CE08416
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08416"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1014.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08310
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08310"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1022.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08311
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08311"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1020.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08312
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08312"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1014.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08313
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08313"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1022.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08314
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08314"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1020.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08315
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08315"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1014.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องประชุม
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น 3 หมายเลข CE08316
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >กระดาน</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08316"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, กระดาน, โซฟาลม"
+                    data-store = "9"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+
+        <div class="w-80 m-12 rounded-b-2xl rounded-2xl shadow-xl hover:shadow-2xl">
+            <img src="/img/IMG_1020.jpg" alt="" class=" rounded-t-2xl">
+            <div>
+                <h1 class="pl-5 pt-5 text-xl font-bold">
+                    ห้องคาราโอเกะ
+                </h1>
+                <h1 class="pl-5 text-gray-500" >
+                    ชั้น G หมายเลข CE08316
+                </h1>
+            </div>
+            <div class="m-5">
+                <h1>ห้องกลุ่ม</h1>
+                <div class="flex flex-wrap pt-3 items-center w-full gap-2">
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โต๊ะประชุม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >เก้าอี้</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded">โซฟาลม</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >ปลั๊กไฟ</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >แอร์</h1>
+                    <h1 class=" bg-gray-200 pl-2 pr-2 text-xs rounded" >TV</h1>
+                </div>
+            </div>
+            <div class=" pb-5 m-5">
+                <button class=" bg-black text-white p-2 w-full rounded-xl"
+                    onclick="autoFill(this)"
+                    data-room = "CE08317"
+                    data-amenities="โต๊ะประชุม, เก้าอี้, ปลั๊กไฟ, แอร์, TV, โซฟาลม"
+                    data-store = "5"
+                    data-floor = "4"
+                >จองห้องนี้</button>
+            </div>
+        </div>  
+        
+
+    
+    </div>
+
+<!-- Form -->
+    <div id="book_model" class="justify-center items-center fixed inset-0 z-50 hidden bg-black/50">
+        <div id="book_model" class=" w-96 bg-white rounded-xl">
+            <form action="" class="">
+                <div>
+                    <h1 class="mt-5 ml-5 text-2xl font-bold">
+                        จองห้อง
+                    </h1>
+                    <h1 class="ml-5 mt-2">
+                        เลือกวันที่และเวลาที่ต้องการจองห้อง
+                    </h1>
+                </div>
+                    <div class="flex flex-col bg-purple-300 m-5 rounded-xl">
+                        <h1 class=" pl-5 pb-2 pt-5 text-2xl font-bold">
+                            ห้องอ่านหนังสือ
+                        </h1>
+                        <h1 class="pl-5">
+                            หมายเลขห้อง: <span id="room_data"></span>
+                        </h1>
+                        <h1 class="pl-5">
+                            ชั้น: <span id="floor_data"></span>
+                        </h1>
+                        <h1 class="pl-5">
+                            ความจุ: <span id="store_data"></span>
+                        </h1>
+                        <h1 class="pl-5 pb-5">
+                            สื่งอำนวยความสะดวก: <span id="amenities_data" class="flex flex-wrap"></span>
+                        </h1>
+                    </div>
+                    <div>
+                        <h1 class="ml-5 ">
+                            ผู้จอง: <span id="curren-name"></span>
+                        </h1>
+                    </div>
+                    <div>
+                        <h1 class="ml-5 mt-2">
+                            จองวันที่
+                        </h1>
+                        <p class="ml-5"><span id="current-date"></span></p>
+                    </div>
+                    <div class="flex mt-3">
+                        <div>
+                            <h1 class="ml-5">
+                                เวลาเข้า
+                            </h1>
+                            <select name="time_in" id="time_in" class="ml-5 pl-1 pr-10 pt-1 pb-1 rounded-xl border">
+                                <option value="selected disabled">กรุณาเลือกเวลาเข้า</option>
+                                <option value="time">08:00</option>
+                                <option value="time">09:00</option>
+                                <option value="time">10:00</option>
+                                <option value="time">11:00</option>
+                                <option value="time">12:00</option>
+                                <option value="time">13:00</option>
+                                <option value="time">14:00</option>
+                                <option value="time">15:00</option>
+                                <option value="time">16:00</option>
+                                <option value="time">17:00</option>
+                                <option value="time">18:00</option>
+                                <option value="time">19:00</option>
+                                <option value="time">20:00</option>
+                            </select>
+                        </div>    
+                        <div>
+                            <h1 class="ml-8">
+                                เวลาออก
+                            </h1>
+                            <select name="time_out" id="time_out" class="ml-8 pl-1 pr-10 pt-1 pb-1 rounded-xl border">
+                                <option value="selected disabled">เวลาออก</option>
+                                <option value="time">09:00</option>
+                                <option value="time">10:00</option>
+                                <option value="time">11:00</option>
+                                <option value="time">12:00</option>
+                                <option value="time">13:00</option>
+                                <option value="time">14:00</option>
+                                <option value="time">15:00</option>
+                                <option value="time">16:00</option>
+                                <option value="time">17:00</option>
+                                <option value="time">18:00</option>
+                                <option value="time">19:00</option>
+                                <option value="time">20:00</option>
+                            </select>     
+                        </div>    
+                    </div>
+                <div>
+                    <h1 class="mt-5 ml-5" >
+                        วัตถุประสงค์ (ไม่บังคับ)
+                    </h1>
+                    <input id="objective" type="text" class="m-3 border rounded-xl pr-20 pt-2 pb-2 pl-3 " placeholder="อ่านหนังสือ, ประชุม">
+                </div>
+            </form>
+            <div class="flex justify-end gap-3 pt-4 mr-5 pb-5">
+                <button type="button" id="cancel" class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">ยกเลิก</button>
+                <button type="button" onclick="confirmBooking(event)" class="px-6 py-2 bg-purple-900 text-white rounded-lg hover:bg-black transition">ยืนยันการจอง</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="no_room_found" class="hidden w-full text-center py-20 col-span-4">
+        <h1 class="text-2xl text-gray-500 font-bold">ไม่พบห้องที่ค้นหา</h1>
+        <p class="text-gray-400">กรุณาเลือกเงื่อนไขการค้นหาใหม่อีกครั้ง</p>
+    </div>
+    
+<script src="/javascript/javascript.js"></script>
+</body>
+</html>
