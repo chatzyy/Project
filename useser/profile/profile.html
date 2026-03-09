@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Profile - ระบบจองห้องสมุด</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Basic Icons -->
     <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap');
+        body { font-family: 'Kanit', sans-serif; }
+    </style>
 </head>
-<body class="">
-    <!-- Menu -->
-    <div class="bg-gray-50 fixed w-full">
+<div class="bg-gray-50 fixed w-full">
         <div class="flex shadow p-2 justify-between h-20">
             <div class="flex gap-1">
                 <h1 class="flex justify-center items-center ml-7">
@@ -26,8 +27,8 @@
                 </div>
             </div>
         <div class="flex justify-center h-full ">
-            <a href="../index/home_page.html" class="flex text-black pl-6 pr-6 m-2 items-center rounded-xl hover:bg-gray-200"><i class="bx bx-home mr-2 text-xl"></i>ห้องทั้งหมด</a>
-            <a href="../history/history_room.html" class="flex  text-black pl-6 pr-6 m-2 items-center rounded-xl hover:bg-gray-200"><i class="bx bx-calendar mr-1 text-xl"></i>การจองของฉัน</a>
+            <a href="#" class="flex bg-black text-white pl-6 pr-6 m-2 items-center rounded-xl"><i class="bx bx-home mr-2 text-xl"></i>ห้องทั้งหมด</a>
+            <a href="../history/history_room.html" class="flex bg- text-black pl-6 pr-6 m-2 items-center rounded-xl hover:bg-gray-200"><i class="bx bx-calendar mr-1 text-xl"></i>การจองของฉัน</a>
         </div>
             <div class="flex justify-center items-center m-4">
                 <a href="#" class="flex border rounded-xl  hover:bg-gray-200">
@@ -38,71 +39,71 @@
             </div>
         </div>
     </div>
-
-<!-- Profile -->
-    <div class="flex justify-center items-center p-28 w-full bg-purple-600">  
-    </div>
     
+    <div class="h-64 bg-gradient-to-r from-purple-700 to-indigo-800 pt-20"></div>
 
-    <div class="flex justify-between">
-        <div class="">
-            <div class="flex">
-                <div class="flex p-10 ml-10 mt-5 rounded-xl bg-amber-300 w-32">
-                    profile
+    <div class="max-w-4xl mx-auto -mt-32 px-4 pb-12">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="p-8 sm:flex items-center justify-between border-b bg-white">
+                <div class="flex items-center gap-6">
+                    <div class="w-28 h-28 bg-amber-400 rounded-2xl flex items-center justify-center text-white shadow-inner transform -rotate-3 hover:rotate-0 transition duration-300">
+                        <i class="bx bx-user text-6xl"></i>
+                    </div>
+                    <div>
+                        <h1 id="Name_account" class="text-3xl font-bold text-gray-800">Juddd Jann</h1>
+                        <p id="Email_name" class="text-gray-500"><i class="bx bx-envelope mr-1"></i>Jann@gmail.com</p>
+                    </div>
                 </div>
-                <div class="mt-16 ml-5">
-                    <h1 id="Name_account" class=" font-bold text-xl">Juddd Jann</h1>
-                    <h1 id="Email_name" class=" text-xs">Jann@gmail.com</h1>
+                <div class="mt-6 sm:mt-0 flex flex-col items-end gap-3">
+                    <div class="flex items-center gap-1 bg-red-50 px-4 py-2 rounded-full border border-red-100">
+                        <span class="text-sm font-medium text-red-700 mr-2">สิทธิ์การใช้งาน</span>
+                        <i class="bx bxs-heart text-red-500"></i>
+                        <i class="bx bxs-heart text-red-500"></i>
+                        <i class="bx bxs-heart text-red-500 text-opacity-30"></i>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 transition text-sm flex items-center gap-1">
+                        <i class="bx bx-log-out"></i> ออกจากระบบ
+                    </button>
                 </div>
             </div>
-        </div>
-        
-        <div class="">
-            <div class="flex gap-20 mr-10">
-                <h1 class="mt-12">
-                    สิทธ์ในการใช้บริการณ์ <i class="bx bx-heart" style="color:#ff0000;"></i><i class="bx bx-heart" style="color:#ff0000;"></i><i class="bx bx-heart" style="color:#ff0000;"></i>
-                </h1>
-                <a href="#" class="flex justify-end mt-12 ">ออกจากระบบ</a>
+
+            <div class="p-8 bg-gray-50/50">
+                <h2 class="text-lg font-semibold text-gray-700 mb-6 flex items-center">
+                    <i class="bx bx-info-circle mr-2 text-purple-600"></i> ข้อมูลส่วนตัว
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-500 ml-1 italic">ชื่อ-นามสกุล</label>
+                        <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 text-gray-700 shadow-sm flex items-center gap-3">
+                            <i class="bx bx-id-card text-purple-400"></i>
+                            <span>Juddd Jann</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-500 ml-1 italic">รหัสนิสิต</label>
+                        <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 text-gray-700 shadow-sm flex items-center gap-3 italic">
+                            <i class="bx bx-barcode text-purple-400"></i>
+                            <span>66xxxxxxx</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-500 ml-1 italic">คณะ - สาขาวิชา</label>
+                        <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 text-gray-700 shadow-sm flex items-center gap-3">
+                            <i class="bx bx-book text-purple-400"></i>
+                            <span>เทคโนโลยีสารสนเทศ</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-500 ml-1 italic">เบอร์โทรศัพท์</label>
+                        <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 text-gray-700 shadow-sm flex items-center gap-3">
+                            <i class="bx bx-phone text-purple-400"></i>
+                            <span>09x-xxx-xxxx</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-   
-   
-
-    <div class="grid grid-cols-2  mr-3">
-        <div>
-            <h1 class="mt-10 ml-52 mb-3  pr-20">
-                ชื่อ-สกุล
-            </h1>
-            <p class="flex border ml-52 pl-5 w-80 rounded-xl h-8 text-black/50 bg-gray-200 ">
-                ppppppppppppppppppppppppppp
-            </p>
-        </div>
-        <div>
-            <h1 class="mt-10 ml-10 mb-3  pr-20">
-                รหัสนิสิต
-            </h1>
-            <p class="flex border ml-10 pl-5 w-80 rounded-xl h-8 text-black/50 bg-gray-200">
-                
-            </p>
-        </div>
-        <div>
-            <h1 class="mt-10 ml-52 mb-3  pr-20">
-                คณะ-สาขา
-            </h1>
-            <p class="flex border ml-52 pl-5 w-80 rounded-xl h-8 text-black/50 bg-gray-200 ">
-                
-            </p>
-        </div>
-        <div>
-            <h1 class="mt-10 ml-10 mb-3  pr-20">
-                เบอร์โทร
-            </h1>
-            <p class="flex border ml-10 pl-5 w-80 rounded-xl h-8 text-black/50 bg-gray-200">
-                
-            </p>
-        </div>
-    </div>
-
 </body>
 </html>
